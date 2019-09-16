@@ -1,9 +1,13 @@
-FROM python:3.6
-RUN mkdir -p /opt/imageai/data
+FROM python:3.6-slim
+RUN mkdir -p /opt/imageai/data && \
+    apt-get update && \
+    apt-get install wget 
+
 COPY requirements.txt /opt/imageai/
 WORKDIR /opt/imageai
 RUN pip install -v  -r requirements.txt 
 COPY . /opt/imageai/
-RUN chmod +x start.sh
+RUN chmod +x start.sh 
+RUN wget "https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/yolo.h5"
 ENTRYPOINT ["./start.sh"]
 CMD []
