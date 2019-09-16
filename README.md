@@ -11,7 +11,8 @@ docker run imageai $IMAGE_URL
 
 if you need to see the image result with all detected objects, run docker mounting /opt/imageai/data/ as a volume
 ```
-docker run -v "$(pwd)"/data2:/opt/imageai/data imageai "$IMAGE_URL" 
+mkdir data
+docker run -v "$(pwd)"/data:/opt/imageai/data imageai "$IMAGE_URL" 
 ```
 
 Ref: https://github.com/OlafenwaMoses/ImageAI/blob/master/imageai/Detection/README.md
