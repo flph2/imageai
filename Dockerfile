@@ -1,7 +1,7 @@
 FROM python:3.6-slim
 RUN mkdir -p /opt/imageai/data && \
     apt-get update && \
-    apt-get install wget 
+    apt-get install -y wget 
 
 COPY requirements.txt /opt/imageai/
 WORKDIR /opt/imageai
