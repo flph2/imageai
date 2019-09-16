@@ -1,4 +1,4 @@
-FROM python:3.6-slim
+FROM python:3.6
 RUN mkdir -p /opt/imageai/data && \
     apt-get update && \
     apt-get install -y wget 
