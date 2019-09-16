@@ -5,7 +5,7 @@ RUN mkdir -p /opt/imageai/data && \
 
 COPY requirements.txt /opt/imageai/
 WORKDIR /opt/imageai
-RUN pip install -v  -r requirements.txt 
+RUN pip install -r requirements.txt 
 COPY . /opt/imageai/
 RUN chmod +x start.sh 
 RUN wget "https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/yolo.h5"
